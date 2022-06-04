@@ -35,7 +35,7 @@ class LinkedList {
 
     toString() {
         let currentNode = this.head;
-        while (currentNode.next) {
+        while (currentNode) {
             currentNode = currentNode.next;
         }
         return `${this.head} -> ${this.currentNode}`;
