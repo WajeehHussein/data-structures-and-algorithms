@@ -21,16 +21,17 @@ class LinkedList {
         }
     }
 
-
     insertAfter(value, newValue) {
         let node = this.head;
         while (node) {
+
             if (node.value === value) {
                 let newNode = new Node(newValue);
                 newNode.next = node.next
                 node.next = newNode
                 node = null;
             } else {
+
                 node = node.next;
             }
         }
