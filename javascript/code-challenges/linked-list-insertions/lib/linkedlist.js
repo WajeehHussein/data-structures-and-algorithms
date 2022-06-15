@@ -4,7 +4,6 @@ const Node = require('./node')
 class LinkedList {
     constructor() {
         this.head = null;
-        this.tail = null;
     }
 
     append(value) {
@@ -32,7 +31,6 @@ class LinkedList {
                 node.next = newNode
                 node = null;
             } else {
-
                 node = node.next;
             }
         }
@@ -40,6 +38,8 @@ class LinkedList {
 
     insertBefore(value, newValue) {
         let node = this.head;
+        // console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>', node.value);
+
         while (node) {
             if (node.next.value === value) {
                 let newNode = new Node(newValue);
@@ -54,6 +54,8 @@ class LinkedList {
     }
 
 
+
+
     printList() {
         let tnode = this.head;
         while (tnode != null) {
@@ -61,8 +63,9 @@ class LinkedList {
             tnode = tnode.next;
         }
     }
-
 }
+
+
 
 
 module.exports = LinkedList;
