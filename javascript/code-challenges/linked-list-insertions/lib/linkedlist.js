@@ -3,7 +3,8 @@ const Node = require('./node')
 
 class LinkedList {
     constructor() {
-        this.head = null
+        this.head = null;
+        this.tail = null;
     }
 
     append(value) {
@@ -24,8 +25,23 @@ class LinkedList {
     insertAfter(value, newValue) {
         let node = this.head;
         while (node) {
-
+            // console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>', node.next.value);
             if (node.value === value) {
+                let newNode = new Node(newValue);
+                newNode.next = node.next
+                node.next = newNode
+                node = null;
+            } else {
+
+                node = node.next;
+            }
+        }
+    }
+
+    insertBefore(value, newValue) {
+        let node = this.head;
+        while (node) {
+            if (node.next.value === value) {
                 let newNode = new Node(newValue);
                 newNode.next = node.next
                 node.next = newNode
@@ -41,7 +57,7 @@ class LinkedList {
     printList() {
         let tnode = this.head;
         while (tnode != null) {
-            console.log(tnode.value + " ");
+            console.log(`{ ${tnode.value} } ->`);
             tnode = tnode.next;
         }
     }

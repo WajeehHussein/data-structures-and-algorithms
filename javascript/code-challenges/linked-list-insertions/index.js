@@ -5,13 +5,12 @@ ll.append(1)
 ll.append(2)
 ll.append(5)
 ll.append(0)
-ll.append(9)
-ll.append(7)
-ll.append(6)
+
 ll.printList();
 
-ll.insertAfter(0, 3)
-
+ll.insertAfter(5, 3)
 console.log('---------------------------------------------------------------------------------------------------------');
 ll.printList();
-console.log(ll);
+console.log('---------------------------------------------------------------------------------------------------------');
+ll.insertBefore(2, 4);
+ll.printList();
