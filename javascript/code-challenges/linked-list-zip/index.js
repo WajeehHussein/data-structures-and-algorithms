@@ -1,9 +1,9 @@
 'use strict';
-const { LinkedList1, LinkedList2 } = require('./lib/linkedlist');
+const LinkedList1 = require('./lib/linkedlist');
 
 const linked1 = new LinkedList1();
-const linked2 = new LinkedList2();
-// const zipped = new merge();
+const linked2 = new LinkedList1();
+const linked3 = new LinkedList1();
 
 
 linked1.append(1)
@@ -17,7 +17,12 @@ linked2.append(7)
 linked2.append(6)
 
 
+linked3.merge(linked1, linked2)
 
+
+
+// console.log('linked1', linked1);
+// console.log('linked2', linked2);
 
 
 console.log('linked list 1');
@@ -30,8 +35,8 @@ linked2.printList();
 
 console.log('----------------------------------------------------------------------------------------------');
 console.log('merged');
-// console.log(zipped);
-// zipped.printList();
+linked3.printList();
+// console.log('linked 333333333333333333', linked3);
 
 
 
