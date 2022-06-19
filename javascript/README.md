@@ -12,4 +12,8 @@
 
 [binary search](./code-challenges/array-binary-search/array-binary-search.md)
 
+[linked-list-insertions](./code-challenges/linked-list-insertions/linked-list-insertions.md)
+
+[linked-list-zip](./code-challenges/linked-list-zip/linked-list-zip.md)
+
 

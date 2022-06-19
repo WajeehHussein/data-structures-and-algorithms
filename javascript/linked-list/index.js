@@ -9,5 +9,5 @@ ll.insert(5);
 
 console.log(ll);
 console.log(ll.includes(7));
-console.log(ll.insert(2));
+console.log(ll.insert(5));
 // console.log(ll.toString());

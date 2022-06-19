@@ -17,11 +17,12 @@ linked2.append(7)
 linked2.append(6)
 
 
-linked3.merge(linked1, linked2)
 
 
 
-// console.log('linked1', linked1);
+
+
+// console.log('linked1', linked1.head.value);
 // console.log('linked2', linked2);
 
 
@@ -35,7 +36,7 @@ linked2.printList();
 
 console.log('----------------------------------------------------------------------------------------------');
 console.log('merged');
-linked3.printList();
+linked3.zipLists(linked1, linked2).printList()
 // console.log('linked 333333333333333333', linked3);
 
 
