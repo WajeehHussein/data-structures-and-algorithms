@@ -2,6 +2,7 @@
 
 const Node = require('./node')
 class LinkedList1 {
+
     constructor() {
         this.head = null
     }
@@ -29,32 +30,23 @@ class LinkedList1 {
         }
     }
 
-    merge(L1, L2) {
-        let lNext1, lNext2
-        this.head = L1.head
-        let currentNode = this.head
-        // this.head = L1
-        while (L1 != null && L2 != null) {
-            lNext1 = L1.next;
-            L1.next = L2
-            L1 = lNext1
 
-            lNext2 = L2.next;
-            L2.next = lNext1
-            L2 = lNext2
-            currentNode = currentNode.next
+
+    zipLists(L1, L2) {
+        let merged = new LinkedList1(); // new ll merged
+        while (L1.head || L2.head) {    // or because if two ll not equal length
+            if (L1.head.value) {
+                merged.append(L1.head.value);   // append in merged array
+                L1.head = L1.head.next;         // next pointer in ll
+            }
+            if (L2.head.value) {
+                merged.append(L2.head.value);   // append in merged array
+                L2.head = L2.head.next;         // next pointer in ll
+            }
         }
-        return currentNode
+        return merged;
     }
 }
 
 
 module.exports = LinkedList1
-
-
-
-
-
-
-
-
