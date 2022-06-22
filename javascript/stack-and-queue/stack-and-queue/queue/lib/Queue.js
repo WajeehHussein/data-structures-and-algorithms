@@ -45,5 +45,14 @@ class Queue {
         }
         return this.front.value;
     }
+
+
+    printList() {
+        let tnode = this.front;
+        while (tnode != null) {
+            console.log(`{ ${tnode.value} } ->`);
+            tnode = tnode.next;
+        }
+    }
 }
 module.exports = Queue;
