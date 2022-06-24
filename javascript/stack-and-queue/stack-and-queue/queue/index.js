@@ -1,12 +1,18 @@
 'use strict';
-const Queue = require('./lib/Queue');
-const newQueue = new Queue();
+const PseudoQueue = require('./lib/pseudo-queue');
+const pseudoQueue = new PseudoQueue();
 
-newQueue.enqueue(10);
-newQueue.enqueue(20);
-newQueue.enqueue(30);
+pseudoQueue.enqueue(10);
+pseudoQueue.enqueue(20);
+pseudoQueue.enqueue(30);
+pseudoQueue.enqueue(40);
+// pseudoQueue.dequeue(102);
 
-newQueue.printList()
-newQueue.dequeue();
+// pseudoQueue.printList()
+
+console.log('in stack -> ', pseudoQueue.pushStack.top);
 console.log('--------------------------------------------------------------');
-newQueue.printList()
+console.log('out stack -> ', pseudoQueue.popStack.top);
+
+
+
