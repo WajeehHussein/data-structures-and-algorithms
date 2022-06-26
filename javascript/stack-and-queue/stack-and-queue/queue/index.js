@@ -1,18 +1,25 @@
 'use strict';
-const PseudoQueue = require('./lib/pseudo-queue');
-const pseudoQueue = new PseudoQueue();
+// const PseudoQueue = require('./lib/pseudo-queue');
+// const pseudoQueue = new PseudoQueue();
+// const Queue = require('./lib/Queue')
+const Queue = require('./lib/AnimalShelter')
 
-pseudoQueue.enqueue(10);
-pseudoQueue.enqueue(20);
-pseudoQueue.enqueue(30);
-pseudoQueue.enqueue(40);
-// pseudoQueue.dequeue(102);
+const shelter = new Queue()
 
-// pseudoQueue.printList()
+shelter.enqueue("dog")
+shelter.enqueue("cat")
+shelter.enqueue("dog")
+shelter.enqueue(5)
 
-console.log('in stack -> ', pseudoQueue.pushStack.top);
-console.log('--------------------------------------------------------------');
-console.log('out stack -> ', pseudoQueue.popStack.top);
+// console.log('#################', shelter.front.value);
+// console.log('///////////////////', shelter.dequeue());
+// console.log('///////////////////', shelter.dequeue());
+// console.log('///////////////////', shelter.dequeue());
+// console.log('///////////////////', shelter.dequeue());
+
+shelter.printList()
+
+
 
 
 
