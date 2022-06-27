@@ -14,25 +14,25 @@ class Queue {
         }
     }
     enqueue(animal) {
-        // if (animal === "cat" || animal === "dog") {
-        // i do care only about the rear
-        const newNode = new Node(animal);
-        if (this.isEmpty()) {
-            this.front = newNode;
-            this.rear = newNode;
-            this.length += 1;
-        } else {
-            this.rear.next = newNode;
-            this.rear = newNode;
-            this.length += 1;
+        if (animal === "cat" || animal === "dog") {
+            // i do care only about the rear
+            const newNode = new Node(animal);
+            if (this.isEmpty()) {
+                this.front = newNode;
+                this.rear = newNode;
+                this.length += 1;
+            } else {
+                this.rear.next = newNode;
+                this.rear = newNode;
+                this.length += 1;
+            }
         }
-        // } else return false
     }
-    dequeue() {
+    dequeue(animal) {
         // i do care only about the front
         if (this.isEmpty()) {
             return 'the queue is empty';
-        } else if (this.front.value === "cat" || this.front.value === "dog") {
+        } else if (animal === "cat" || animal === "dog") {
             const temp = this.front;
             this.front = this.front.next;
             temp.next = null;
