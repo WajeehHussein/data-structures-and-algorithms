@@ -6,10 +6,6 @@ describe('stack', () => {
     it('works', () => {
         expect(true).toBeTruthy();
     });
-    // test(' an empty linked list', () => {
-    //     let list = new LinkedLilst();
-    //     expect(list.head).toBeNull()
-    // })
     test('push onto a stack', () => {
         let stack = new Stack()
         stack.push("value")

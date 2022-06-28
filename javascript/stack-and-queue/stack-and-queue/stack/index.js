@@ -11,3 +11,7 @@ console.log(newStack.peek());
 newStack.pop();
 newStack.pop();
 console.log(newStack.peek());
+console.log('------------------------------------------------------------------');
+
+let string = "[](){}(}";
+console.log(newStack.vlidateBrackets(string));
