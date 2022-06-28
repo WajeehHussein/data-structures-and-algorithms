@@ -41,6 +41,38 @@ class Stack {
             return this.top.value;
         }
     }
+
+    vlidateBrackets(string) {
+        let stack = []
+        // let arrBrackets = string.split("")
+
+        for (let i = 0; i < string.length; i++) {
+            let bracket = string[i];
+            if (bracket == '(' || bracket == '[' || bracket == '{') {
+                stack.push(bracket);
+            }
+            (stack.length == 0) ? false : true;
+
+            let testBrackets;
+            switch (bracket) {
+                case ')':
+                    testBrackets = stack.pop();
+                    if (testBrackets != '(') return false;
+
+
+                case '}':
+                    testBrackets = stack.pop();
+                    if (testBrackets != '{') return false;
+
+
+                case ']':
+                    testBrackets = stack.pop();
+                    if (testBrackets != '[') return false;
+            }
+        }
+
+        return (stack.length == 0);
+    }
 }
 
 module.exports = Stack;
