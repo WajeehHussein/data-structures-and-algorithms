@@ -46,6 +46,23 @@ class Queue {
         return this.front.value;
     }
 
+    // DuckDuckGoose(stringlist, k) {
+
+    //     console.log(stringlist)
+    //     console.log("************************")
+
+    //     while (stringlist.length > 1) {
+    //         for (let i = 0; i < stringlist.length - k; i++) {
+    //             stringlist.enqueue(stringlist[i].dequeue())
+    //         }
+    //         stringlist.dequeue()
+    //     }
+    //     console.log(stringlist)
+
+    //     return console.log(stringlist.rear.value)
+
+    // }
+
 
     printList() {
         let tnode = this.front;
