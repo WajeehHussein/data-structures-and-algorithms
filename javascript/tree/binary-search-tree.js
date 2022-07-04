@@ -2,74 +2,48 @@
 const Node = require('./Node');
 
 class BinarySearchTree {
-    constructor() {
-        this.root = null;
+    constructor(root) {
+        this.root = root;
     }
 
-    // add(value) {
-    //     const node = this.root;
-    //     if (node === null) {
-    //         this.root = new Node(value)
-    //         return;
-    //     } else {
-    //         const searchTree = function (node) {
-    //             if (value < node.value) {
-    //                 if (node.left === null) {
-    //                     node.left = new Node(value);
-    //                     return;
-    //                 }
-    //                 else if (node.left !== null) {
-    //                     return searchTree(node.left)
-    //                 }
-    //             } else if (value > node.value) {
-    //                 if (node.right === null) {
-    //                     node.right = new Node(value);
-    //                     return;
-    //                 } else if (node.right !== null) {
-    //                     return searchTree(node.right)
-    //                 }
-    //             } else { return null }
-    //         }
-    //     };
-    //     return searchTree(node)
-    // }
-
-    insert(data) {
-        var newNode = new Node(data);
-        if (this.root === null) {
-            this.root = newNode;
-        } else {
-            this.insertNode(this.root, newNode);
-        };
-    };
-    insertNode(node, newNode) {
-        if (newNode.data < node.data) {
-            if (node.left === null) {
-                node.left = newNode;
+    add(value) {
+        let newNode = new Node(value);
+        // if tree empty
+        if (!this.root) {
+            return this.root = newNode;
+        }
+        let node = this.root;
+        let insert = () => {
+            if (value < node.value) {
+                if (!node.left) {
+                    return node.left = newNode;
+                }
+                // like go left
+                node = node.left;
+                insert();  // recirsion
             } else {
-                this.insertNode(node.left, newNode);
-            };
-        } else {
-            if (node.right === null) {
-                node.right = newNode;
-            } else {
-                this.insertNode(node.right, newNode);
-            };
+                if (!node.right) {
+                    return node.right = newNode;
+                }
+                // like go right
+                node = node.right;
+                insert();  // recirsion
+            }
         };
-    };
+        insert();   // call function
+    }
 
     contains(value) {
-        let currentNode = this.root;
-        while (currentNode) {
-            if (value === currentNode.value) return true;
-            if (value < currentNode.value) {
-                currentNode = currentNode.left;
-            } else {
-                currentNode = currentNode.right;
-            }
-        }
-        return false
+        let found = false;
+        let search = (node) => {
+            if (node.value === value) found = true;
+            if (node.right) search(node.right);
+            if (node.left) search(node.left);
+        };
+        search(this.root);
+        return found;
     }
+
     getRootNode() {
         return this.root;
     }

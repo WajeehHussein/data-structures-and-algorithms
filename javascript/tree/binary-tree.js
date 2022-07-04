@@ -49,6 +49,17 @@ class BinaryTree {
         traverse(this.root)
         return result;
     }
+
+    contains(value) {
+        let found = false;
+        let search = (node) => {
+            if (node.value === value) found = true;
+            if (node.right) search(node.right);
+            if (node.left) search(node.left);
+        };
+        search(this.root);
+        return found;
+    }
 }
 
 module.exports = BinaryTree;
