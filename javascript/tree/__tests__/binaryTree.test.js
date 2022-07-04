@@ -48,4 +48,10 @@ describe("Binary Tree", () => {
         let postOrder = tree.postOrder();
         expect(postOrder).toEqual(expectedOutput);
     });
+    test('contains found it', () => {
+        expect(tree.contains(5)).toEqual(true)
+    });
+    test('contains not found', () => {
+        expect(tree.contains(50)).toEqual(false)
+    });
 })
