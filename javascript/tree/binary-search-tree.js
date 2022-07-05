@@ -64,7 +64,6 @@ class BinarySearchTree {
         search(this.root);
         return max;
     }
-
     getRootNode() {
         return this.root;
     }
