@@ -43,6 +43,27 @@ class BinarySearchTree {
         search(this.root);
         return found;
     }
+    findMax() {
+        let max = this.root.value;
+        let search = (node) => {
+            if (node.value > max)
+                return max = node.value;
+            // search in right side 
+            if (node.right) {
+                if (node.right.value > max) max = node.right.value;
+                // recursion (do right in deeply)
+                search(node.right);
+            }
+            // search in left side
+            if (node.left) {
+                if (node.left.value > max) max = node.left.value;
+                // go left
+                search(node.left);
+            }
+        };
+        search(this.root);
+        return max;
+    }
 
     getRootNode() {
         return this.root;
