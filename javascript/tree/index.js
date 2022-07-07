@@ -63,8 +63,9 @@ two.right = five;
 three.right = six;
 
 // console.log({ binaryTree });
-binaryTree.add(20)
-console.log(treeify.asTree(binaryTree, true))
+// binaryTree.add(20)
+// console.log(treeify.asTree(binaryTree, true))
 console.log(binaryTree.contains(50));
 console.log(binaryTree.contains(5));
 console.log('/////max', binaryTree.findMax());
+console.log(binaryTree.breadthFirst());

@@ -67,6 +67,23 @@ class BinarySearchTree {
     getRootNode() {
         return this.root;
     }
+
+    breadthFirst() {
+        let result = [];
+        let trackArr = [];
+
+        trackArr.push(this.root);
+        // if exist element in array keep in loop
+        while (trackArr.length) {
+            // go to node push left and right then go deeply
+            let node = trackArr.shift();
+            result.push(node.value);
+            if (node.left) trackArr.push(node.left);
+            if (node.right) trackArr.push(node.right);
+        };
+
+        return result;
+    }
 }
 
 module.exports = BinarySearchTree

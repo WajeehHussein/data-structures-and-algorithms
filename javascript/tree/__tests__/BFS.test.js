@@ -2,7 +2,7 @@
 const Node = require('../Node')
 const BST = require('../binary-search-tree')
 
-describe("Find max", () => {
+describe("Breadth First", () => {
     let binaryTree = null;
     beforeAll(() => {
         let one = new Node(4);
@@ -19,10 +19,6 @@ describe("Find max", () => {
         three.right = six;
 
         binaryTree = new BST(one);
-    })
-    test("Find Max", () => {
-        expect(binaryTree.findMax()).toBe(6);
-
     })
     test("breadth first", () => {
         expect(binaryTree.breadthFirst()).toStrictEqual([4, 2, 5, 1, 3, 6])
