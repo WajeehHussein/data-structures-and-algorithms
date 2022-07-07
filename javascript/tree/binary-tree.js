@@ -60,6 +60,7 @@ class BinaryTree {
         search(this.root);
         return found;
     }
+
 }
 
 module.exports = BinaryTree;
