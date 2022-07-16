@@ -69,3 +69,4 @@ console.log(binaryTree.contains(50));
 console.log(binaryTree.contains(5));
 console.log('/////max', binaryTree.findMax());
 console.log(binaryTree.breadthFirst());
+console.log(binaryTree.fizzBuzz(binaryTree));
