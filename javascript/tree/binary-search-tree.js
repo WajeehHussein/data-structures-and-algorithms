@@ -84,6 +84,28 @@ class BinarySearchTree {
 
         return result;
     }
+
+    fizzBuzz() {
+        let currNode = (val) => {
+            if (val % 3 == 0 && val % 5 == 0) return "fizz buzz";
+            else if (val % 3 == 0) return "fizz";
+            else if (val % 5 == 0) return "buzz";
+            else return val;
+        };
+        let reverse = (node) => {
+            if (node.right) {
+                node.right.value = currNode(node.right.value);
+                reverse(node.right);
+            }
+            if (node.left) {
+                node.left.value = currNode(node.left.value);
+                reverse(node.left);
+            }
+            node.value = currNode(node.value);
+        };
+        reverse(this.root);
+        return this;
+    }
 }
 
 module.exports = BinarySearchTree
