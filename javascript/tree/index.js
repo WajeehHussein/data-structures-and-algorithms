@@ -55,12 +55,40 @@ let four = new Node(1);
 let five = new Node(3);
 let six = new Node(6);
 
+let f1 = new Node("folder");
+let f2 = new Node(".js");
+let f3 = new Node(".sql");
+let f4 = new Node("folder");
+let f5 = new Node(".java");
+let f6 = new Node("folder");
+
+let f10 = new Node("folder");
+let f20 = new Node(".js");
+let f30 = new Node(".sql");
+let f40 = new Node("folder");
+let f50 = new Node(".java");
+let f60 = new Node("folder");
+
 let binaryTree = new BinarySearchTree(one);
 one.left = two;
 one.right = three;
 two.left = four;
 two.right = five;
 three.right = six;
+
+let folderTree1 = new BinarySearchTree(f1);
+f1.left = f2;
+f1.right = f3;
+f2.left = f4;
+f2.right = f5;
+f3.right = f6;
+
+let folderTree2 = new BinarySearchTree(f10);
+f10.left = f20;
+f10.right = f30;
+f20.left = f40;
+f20.right = f50;
+f30.right = f60;
 
 // console.log({ binaryTree });
 // binaryTree.add(20)
@@ -69,4 +97,9 @@ console.log(binaryTree.contains(50));
 console.log(binaryTree.contains(5));
 console.log('/////max', binaryTree.findMax());
 console.log(binaryTree.breadthFirst());
-console.log(binaryTree.fizzBuzz(binaryTree));
+console.log("$$$$$$$", binaryTree.sumOfAllOdd());
+console.log('///////////////////////////////////////////////////////////////////////////////////////');
+console.log("fooooolder", folderTree1.compareDirectories(folderTree1, folderTree2));
+console.log(folderTree1.treeAsArray());
+
+// console.log("/********************", folderTree1.isSameStructure(folderTree1, folderTree1));
