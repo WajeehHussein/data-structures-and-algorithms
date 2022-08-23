@@ -1,3 +1,7 @@
 # Hash Table
 
-![](./hash1.jpg)
+![](./assets/hash1.jpg)
+
+# Repeated Hash
+
+![](./assets/repeated-hash.jpg)

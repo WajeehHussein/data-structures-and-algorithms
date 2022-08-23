@@ -107,11 +107,30 @@ class Hashmap {
         return keys;
     }
 
+    repeated(str) {
+
+        let arr = str.toLowerCase().split(" ");
+        // console.log(arr);
+        let hash = new Hashmap();
+        let isHere = false;
+        let result;
+        for (let i = 0; i < arr.length; i++) {
+            isHere = hash.contain(arr[i]);
+            hash.set(arr[i]);
+            result = arr[i];
+            // console.log(result);
+
+            if (isHere) break;
+        }
+        return result;
+    }
+
 }
 
-const myhashmap = new Hashmap(10);
+const myhashmap = new Hashmap();
 myhashmap.set('a', 'AAAAAA');
 myhashmap.set('b', 'BBBBBBB');
+console.log(myhashmap.repeated('a b c d a a '));
 // myhashmap.set('c', 'CCCCCCC');
 // myhashmap.set('d', 'DDDDDDD');
 // myhashmap.set('e', 'EEEEEEE');
